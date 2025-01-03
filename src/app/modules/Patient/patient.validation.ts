@@ -31,3 +31,7 @@ const patientValidationSchema = z.object({
     }),
   }),
 });
+
+export const patientValidation = {
+  patientValidationSchema,
+};
