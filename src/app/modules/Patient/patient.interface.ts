@@ -1,10 +1,11 @@
 export type TPatient = {
     id: string;
     name: string;
+    age: number;
     email: string;
-    password: string;
-    role: string;
+    gender: "male" | "female" | "other";
     contactNo: string;
     address: string;
     profileImage: string;
+    medicalHistory: string;
 };

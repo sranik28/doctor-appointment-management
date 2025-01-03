@@ -2,17 +2,21 @@ import mongoose, { model, Schema } from 'mongoose';
 import { TPatient } from './patient.interface';
 
 const patientSchema = new Schema<TPatient>({
+  id: {
+    type: String,
+  },
   name: {
     type: String,
+  },
+  age: {
+    type: Number,
   },
   email: {
     type: String,
   },
-  password: {
+  gender: {
     type: String,
-  },
-  role: {
-    type: String,
+    enum: ['male', 'female', 'other'],
   },
   contactNo: {
     type: String,
@@ -21,6 +25,9 @@ const patientSchema = new Schema<TPatient>({
     type: String,
   },
   profileImage: {
+    type: String,
+  },
+  medicalHistory: {
     type: String,
   },
 });
