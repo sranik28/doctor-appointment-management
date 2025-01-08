@@ -1,11 +1,23 @@
 import { TUser } from "./user.interface";
 import { User } from "./user.model";
 
-const createUser = async (payload: TUser) => {
+const createPatient = async (payload: TUser) => {
+    const result = await User.create(payload);
+    return result;
+};
+
+const createAdmin = async (payload: TUser) => {
+    const result = await User.create(payload);
+    return result;
+};
+
+const createDoctor = async (payload: TUser) => {
     const result = await User.create(payload);
     return result;
 };
 
 export const UserService = {
-    createUser,
+    createPatient,
+    createAdmin,
+    createDoctor
 }

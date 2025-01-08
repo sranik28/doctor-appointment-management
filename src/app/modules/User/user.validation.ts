@@ -1,13 +1,11 @@
 import { z } from 'zod';
 
-const userValidationSchema = z.object({
+const createUserValidationSchema = z.object({
   body: z.object({
-    id: z.string({
-      required_error: 'id is required',
-    }),
-    role: z.enum(['Admin', 'Doctor', 'Patient'], {
-      required_error: 'role is required',
-    }),
+    // id: z.string({
+    //   required_error: 'id is required',
+    // }),
+    
     name: z.string({
       required_error: 'name is required',
     }),
@@ -17,9 +15,12 @@ const userValidationSchema = z.object({
     password: z.string({
       required_error: 'password is required',
     }),
+    role: z.enum(['Admin', 'Doctor', 'Patient'], {
+      required_error: 'role is required',
+    }).default('Patient'),
   }),
 });
 
 export const UserValidation = {
-  userValidationSchema,
+  createUserValidationSchema,
 };
