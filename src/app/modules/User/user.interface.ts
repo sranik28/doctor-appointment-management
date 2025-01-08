@@ -4,4 +4,5 @@ export type TUser = {
   email: string;
   password: string;
   role: 'Admin' | 'Doctor' | 'Patient';
+  status: 'Blocked' | 'Active';
 };
